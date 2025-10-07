@@ -1,3 +1,5 @@
+[For English](https://github.com/Syogo-Suganoya/TweetMate/blob/main/README.md)
+
 # オモイアイ - 共通点発見ツール
 
 ## 概要

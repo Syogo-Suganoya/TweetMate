@@ -1,3 +1,5 @@
+[日本語版](https://github.com/Syogo-Suganoya/TweetMate/blob/main/README_ja.md)
+
 # OmoiAi - Common Interest Discovery Tool
 
 ## Overview
