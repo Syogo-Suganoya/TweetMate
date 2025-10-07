@@ -1,44 +1,44 @@
-# オモイアイ - 共通点発見ツール
+# OmoiAi - Common Interest Discovery Tool
 
-## 概要
+## Overview
 
-このツールは、X（旧Twitter）の投稿から共通のキーワードを抽出し、ユーザー間の共通点を見つけるためのプログラムです。日本語のストップワードを除外し、自然言語処理を用いて共通トピックを抽出します。
-
----
-
-## 主な機能
-
-1. **投稿データ取得**
-   - X API またはモックデータを使用して、指定されたユーザーの投稿を取得します。
-2. **共通キーワード抽出**
-   - TinySegmenter を使用して日本語のトークン化を行い、ストップワードを除外した共通キーワードを抽出します。
-3. **モックデータ対応**
-   - 実データの代わりにモックデータを使用して動作確認が可能です。
+OmoiAi is a tool that extracts common keywords from posts on X (formerly Twitter) to help identify shared interests between users. The tool excludes Japanese stopwords and uses natural language processing to extract common topics.
 
 ---
 
-## 使用技術
+## Key Features
 
-- **Pythonライブラリ**
-  - `dotenv`: 環境変数の読み込み
-  - `tinysegmenter`: 日本語トークン化
-  - `argparse`: コマンドライン引数の解析
-  - `urllib`: 外部リソースの取得
-
-- **外部リソース**
-  - [stopwords-ja](https://github.com/stopwords-iso/stopwords-ja): 日本語ストップワードリスト
+1. **Post Data Retrieval**
+   - Retrieves posts from specified users using the X API or mock data.
+2. **Common Keyword Extraction**
+   - Uses TinySegmenter for Japanese tokenization and extracts common keywords after removing stopwords.
+3. **Mock Data Support**
+   - Allows operation verification using mock data instead of real posts.
 
 ---
 
-## インストール
+## Technologies Used
 
-1. 必要なライブラリをインストールします。
+- **Python Libraries**
+  - `dotenv`: for loading environment variables
+  - `tinysegmenter`: for Japanese tokenization
+  - `argparse`: for parsing command-line arguments
+  - `urllib`: for accessing external resources
+
+- **External Resources**
+  - [stopwords-ja](https://github.com/stopwords-iso/stopwords-ja): Japanese stopword list
+
+---
+
+## Installation
+
+1. Install required libraries:
 
     ```bash
     pip install -r requirements.txt
     ```
 
-2. 環境変数を設定します。`.env` ファイルを作成し、以下の内容を記載してください。
+2. Set environment variables by creating a `.env` file with the following content:
 
     ```env
     X_API_KEY="YOUR_X_API_KEY"
@@ -49,46 +49,44 @@
 
 ---
 
-## 実行方法
+## Usage
 
-### 実データを使用する場合
+### Using Real Data
 
-以下のコマンドを実行します。
+Run the following command:
 
 ```bash
-python main.py --user1 <ユーザー1のID> --user2 <ユーザー2のID>
+python main.py --user1 <User1_ID> --user2 <User2_ID>
 ```
 
-例:
+Example:
 
 ```bash
 python main.py --user1 "user1_id" --user2 "user2_id"
 ```
 
-### モックデータを使用する場合
+### Using Mock Data
 
-以下のコマンドを実行します。
+Run the following command:
 
 ```bash
 python main.py --mock
 ```
 
----
+## Notes
 
-## 注意事項
-
-- X API を使用する場合、APIキーを正しく設定してください。
-- モックデータを使用する場合、`--user1` や `--user2` を指定しないでください。
+- When using the X API, make sure your API keys are set correctly.
+- When using mock data, do not specify `--user1` or `--user2`.
 
 ---
 
-## 課題と今後の展望
+## Challenges & Future Plans
 
-- **日本語トークン化の改善**
-  - 現在は TinySegmenter を使用していますが、より精度の高いトークン化ツール（例: MeCab, GiNZA）への移行を検討しています。
+- **Improving Japanese Tokenization**
+  - Currently using TinySegmenter, but considering switching to higher-accuracy tools such as MeCab or GiNZA.
 
-- **Web UI の実装**
-  - コマンドラインツールから Web アプリケーションへの拡張を予定しています。
+- **Implementing a Web UI**
+  - Planning to extend the command-line tool into a web application.
 
-- **感情分析の導入**
-  - 共通キーワードの感情的なニュアンスを分析し、より深い洞察を提供します。
+- **Introducing Sentiment Analysis**
+  - Analyze the emotional nuance of common keywords to provide deeper insights.
